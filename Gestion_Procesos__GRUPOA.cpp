@@ -417,7 +417,7 @@ void pila::mostrar() {
 }
 
 
-// 5. MENÚ PRINCIPAL 
+// 5. MENÚ PRINCIPAL CON LAS OPERACIONES
 int main() {
     lista _Lista;
     cola _Cola;
