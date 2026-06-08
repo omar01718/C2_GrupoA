@@ -20,7 +20,7 @@ private:
     pnodo pL;
 public:
     lista();
-    ~lista(); // Destructor
+    ~lista(); // Destructor de la lista
     void insertar();
     void eliminar();
     void buscar();
@@ -57,7 +57,7 @@ public:
 };
 
 
-// IMPLEMENTACIÓN DE LA CLASE LISTA
+// IMPLEMENTACIÃ“N DE LA CLASE LISTA
 
 lista::lista() {
     pL = NULL;
@@ -248,7 +248,7 @@ void lista::cargar() {
 }
 
 
-// IMPLEMENTACIÓN DE LA CLASE COLA
+// IMPLEMENTACIÃ“N DE LA CLASE COLA
 
 cola::cola() { 
     pL = NULL; 
@@ -274,7 +274,7 @@ void cola::encolar() {
     nuevo->memoria = 0;
     nuevo->sig = NULL;
 
-    // Inserción ordenada por prioridad
+    // InserciÃ³n ordenada por prioridad
     if (pL == NULL || pL->prioridad > nuevo->prioridad) {
         nuevo->sig = pL;
         pL = nuevo;
@@ -293,7 +293,7 @@ void cola::encolar() {
 
 void cola::desencolar() {
     if (pL == NULL) {
-        cout << "La cola de la CPU está vacia (Procesador Inactivo)." << endl;
+        cout << "La cola de la CPU estÃ¡ vacia (Procesador Inactivo)." << endl;
         return;
     }
     pnodo aux = pL;
@@ -304,7 +304,7 @@ void cola::desencolar() {
 
 void cola::buscar() {
     if (pL == NULL) {
-        cout << "La cola de la CPU está vacia." << endl;
+        cout << "La cola de la CPU estÃ¡ vacia." << endl;
         return;
     }
     int id;
@@ -319,7 +319,7 @@ void cola::buscar() {
         }
         aux = aux->sig;
     }
-    if (encontrado == 0) cout << "El proceso no está en la cola de ejecucion." << endl;
+    if (encontrado == 0) cout << "El proceso no estÃ¡ en la cola de ejecucion." << endl;
 }
 
 void cola::mostrar() {
@@ -327,7 +327,7 @@ void cola::mostrar() {
         cout << "Cola de CPU vacia / Procesador Libre." << endl;
         return;
     }
-    cout << "\n=== COLA DE PLANIFICACIÓN DE CPU ===" << endl;
+    cout << "\n=== COLA DE PLANIFICACIÃ“N DE CPU ===" << endl;
     pnodo p = pL;
     cout << "FRENTE -> ";
     while (p != NULL) {
@@ -338,7 +338,7 @@ void cola::mostrar() {
 }
 
 
-// IMPLEMENTACIÓN DE LA CLASE PILA
+// IMPLEMENTACIÃ“N DE LA CLASE PILA
 pila::pila() { 
     pL = NULL; 
 }
@@ -362,7 +362,7 @@ void pila::apilar() {
     nuevo->id = 0;
     nuevo->prioridad = 0;
     
-    // Operación PUSH 
+    // OperaciÃ³n PUSH 
     nuevo->sig = pL;
     pL = nuevo;
     cout << "-> Bloque de memoria asignado correctamente (Estructura LIFO)." << endl;
@@ -373,7 +373,7 @@ void pila::desapilar() {
         cout << "No hay bloques asignados en el Gestor de Memoria." << endl;
         return;
     }
-    // Operación POP
+    // OperaciÃ³n POP
     pnodo aux = pL;
     pL = pL->sig;
     cout << "-> [MEMORIA] Liberando recursos del proceso: " << aux->nombre
@@ -417,14 +417,14 @@ void pila::mostrar() {
 }
 
 
-// 5. MENÚ PRINCIPAL 
+// 5. MENÃš PRINCIPAL 
 int main() {
     lista _Lista;
     cola _Cola;
     pila _Pila;
     int opc; 
     
-    // Intentamosvcargar datos guardados al iniciar el programa automáticamente
+    // Intentamosvcargar datos guardados al iniciar el programa automÃ¡ticamente
     _Lista.cargar();
 
     do {
@@ -471,7 +471,7 @@ int main() {
             case 14: _Lista.guardar();   break;
             case 15: 
                 _Lista.guardar(); 
-                cout << "\nCerrando el sistema de forma segura. ¡Hasta luego!" << endl; 
+                cout << "\nCerrando el sistema de forma segura. Â¡Hasta luego!" << endl; 
                 break;
             default: 
                 cout << "Error: Opcion no valida. Intente nuevamente." << endl;
